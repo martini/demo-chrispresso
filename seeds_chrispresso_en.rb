@@ -46,7 +46,7 @@ agent1 = User.create_or_update(
   groups: groups,
   organization_id: org1.id,
 )
-file = File.open('demo/images/chris.jpg', 'rb')
+file = File.open('demo-chrispresso/images/chris.jpg', 'rb')
 contents = file.read
 avatar1 = Avatar.add(
   object: 'User',
@@ -75,7 +75,7 @@ agent2 = User.create_or_update(
   groups: groups,
   organization_id: org1.id,
 )
-file = File.open('demo/images/jacob.jpg', 'rb')
+file = File.open('demo-chrispresso/images/jacob.jpg', 'rb')
 contents = file.read
 avatar2 = Avatar.add(
   object: 'User',
@@ -104,7 +104,7 @@ agent3 = User.create_or_update(
   groups: groups,
   organization_id: org1.id,
 )
-file = File.open('demo/images/emma.jpg', 'rb')
+file = File.open('demo-chrispresso/images/emma.jpg', 'rb')
 contents = file.read
 avatar3 = Avatar.add(
   object: 'User',
@@ -137,7 +137,7 @@ customer1 = User.create_or_update(
   organization_id: org2.id,
   note: 'likes espresso romano - recommended espresso con panna',
 )
-file = File.open('demo/images/anna.jpg', 'rb')
+file = File.open('demo-chrispresso/images/anna.jpg', 'rb')
 contents = file.read
 avatar1 = Avatar.add(
   object: 'User',
@@ -168,7 +168,7 @@ customer2 = User.create_or_update(
   organization_id: org2.id,
   note: 'likes americano, did order two units'
 )
-file = File.open('demo/images/samuel.jpg', 'rb')
+file = File.open('demo-chrispresso/images/samuel.jpg', 'rb')
 contents = file.read
 avatar2 = Avatar.add(
   object: 'User',
@@ -199,7 +199,7 @@ customer3 = User.create_or_update(
   organization_id: org2.id,
   note: 'did order café au lait, ask next time if the flavor was as expected'
 )
-file = File.open('demo/images/emily.jpg', 'rb')
+file = File.open('demo-chrispresso/images/emily.jpg', 'rb')
 contents = file.read
 avatar3 = Avatar.add(
   object: 'User',
@@ -230,7 +230,7 @@ customer4 = User.create_or_update(
   organization_id: org3.id,
   note: 'no latte but macchiato'
 )
-file = File.open('demo/images/ryan.jpg', 'rb')
+file = File.open('demo-chrispresso/images/ryan.jpg', 'rb')
 contents = file.read
 avatar4 = Avatar.add(
   object: 'User',
@@ -260,7 +260,7 @@ customer5 = User.create_or_update(
   roles: roles,
   note: 'did order viennese melange, ask next time if the flavor was as expected'
 )
-file = File.open('demo/images/david.jpg', 'rb')
+file = File.open('demo-chrispresso/images/david.jpg', 'rb')
 contents = file.read
 avatar5 = Avatar.add(
   object: 'User',
@@ -289,7 +289,7 @@ customer6 = User.create_or_update(
   active: true,
   roles: roles,
 )
-file = File.open('demo/images/olivia.jpg', 'rb')
+file = File.open('demo-chrispresso/images/olivia.jpg', 'rb')
 contents = file.read
 avatar6 = Avatar.add(
   object: 'User',
@@ -775,7 +775,7 @@ Tag.tag_add(
   o_id: ticket7.id,
   item: 'positive',
 )
-file = File.open('demo/images/flat_white_coffee.png', 'rb')
+file = File.open('demo-chrispresso/images/flat_white_coffee.png', 'rb')
 contents = Base64.encode64(file.read)
 article = Ticket::Article.create(
   ticket: ticket7,
