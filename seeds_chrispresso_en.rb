@@ -322,16 +322,8 @@ ticket1 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket1.id,
-  item: 'order',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket1.id,
-  item: 'viennese melange',
-)
+ticket1.tag_add('order')
+ticket1.tag_add('viennese melange')
 article = Ticket::Article.create(
   ticket: ticket1,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -411,16 +403,8 @@ ticket2 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket2.id,
-  item: 'order',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket2.id,
-  item: 'americano',
-)
+ticket2.tag_add('order')
+ticket2.tag_add('americano')
 article = Ticket::Article.create(
   ticket: ticket2,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -489,16 +473,8 @@ ticket3 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket3.id,
-  item: 'order',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket3.id,
-  item: 'americano',
-)
+ticket3.tag_add('order')
+ticket3.tag_add('americano')
 article = Ticket::Article.create(
   ticket: ticket3,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -567,16 +543,8 @@ ticket4 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket4.id,
-  item: 'order',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket4.id,
-  item: 'kopi susu',
-)
+ticket4.tag_add('order')
+ticket4.tag_add('kopi susu')
 article = Ticket::Article.create(
   ticket: ticket4,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -643,16 +611,8 @@ ticket5 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket5.id,
-  item: 'complaint',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket5.id,
-  item: 'wrong delivery',
-)
+ticket5.tag_add('complaint')
+ticket5.tag_add('wrong delivery')
 article = Ticket::Article.create(
   ticket: ticket5,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -704,16 +664,8 @@ ticket6 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket6.id,
-  item: 'complaint',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket6.id,
-  item: 'wrong delivery',
-)
+ticket6.tag_add('complaint')
+ticket6.tag_add('wrong delivery')
 article = Ticket::Article.create(
   ticket: ticket6,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -765,16 +717,8 @@ ticket7 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket7.id,
-  item: 'feedback',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket7.id,
-  item: 'positive',
-)
+ticket7.tag_add('feedback')
+ticket7.tag_add('positive')
 file = File.open('demo-chrispresso/images/flat_white_coffee.png', 'rb')
 contents = Base64.encode64(file.read)
 article = Ticket::Article.create(
@@ -879,7 +823,7 @@ Overview.create_if_not_exists(
   name: 'Open Banana Items',
   link: 'banana',
   prio: 1000,
-  role_id: overview_role.id,
+  role_ids: [overview_role.id],
   condition: {
     'ticket.state_id' => {
       operator: 'is',
@@ -902,7 +846,7 @@ Overview.create_if_not_exists(
   name: 'VIP Customers',
   link: 'vip',
   prio: 1000,
-  role_id: overview_role.id,
+  role_ids: [overview_role.id],
   condition: {
     'ticket.state_id' => {
       operator: 'is',

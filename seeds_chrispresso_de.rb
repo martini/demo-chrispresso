@@ -349,16 +349,8 @@ ticket1 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket1.id,
-  item: 'Bestellung',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket1.id,
-  item: 'Viennese Melange',
-)
+ticket1.tag_add('Bestellung')
+ticket1.tag_add('Viennese Melange')
 article = Ticket::Article.create(
   ticket: ticket1,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -438,16 +430,8 @@ ticket2 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket2.id,
-  item: 'Bestellung',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket2.id,
-  item: 'Americano',
-)
+ticket2.tag_add('Bestellung')
+ticket2.tag_add('Americano')
 article = Ticket::Article.create(
   ticket: ticket2,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -516,16 +500,8 @@ ticket3 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket3.id,
-  item: 'Bestellung',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket3.id,
-  item: 'Americano',
-)
+ticket3.tag_add('Bestellung')
+ticket3.tag_add('Americano')
 article = Ticket::Article.create(
   ticket: ticket3,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -594,16 +570,8 @@ ticket4 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket4.id,
-  item: 'Bestellung',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket4.id,
-  item: 'Kopi Susu',
-)
+ticket4.tag_add('Bestellung')
+ticket4.tag_add('Kopi Susu')
 article = Ticket::Article.create(
   ticket: ticket4,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -670,16 +638,8 @@ ticket5 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket5.id,
-  item: 'Beschwerde',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket5.id,
-  item: 'falsche Lieferung',
-)
+ticket5.tag_add('Beschwerde')
+ticket5.tag_add('falsche Lieferung')
 article = Ticket::Article.create(
   ticket: ticket5,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -731,16 +691,8 @@ ticket6 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket6.id,
-  item: 'Beschwerde',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket6.id,
-  item: 'falsche Lieferung',
-)
+ticket6.tag_add('Beschwerde')
+ticket6.tag_add('falsche Lieferung')
 article = Ticket::Article.create(
   ticket: ticket6,
   type: Ticket::Article::Type.find_by(name: 'email'),
@@ -792,16 +744,8 @@ ticket7 = Ticket.create(
   created_at: created_at,
   updated_at: created_at,
 )
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket7.id,
-  item: 'feedback',
-)
-Tag.tag_add(
-  object: 'Ticket',
-  o_id: ticket7.id,
-  item: 'positive',
-)
+ticket7.tag_add('feedback')
+ticket7.tag_add('positive')
 file = File.open('demo-chrispresso/images/flat_white_coffee.png', 'rb')
 contents = Base64.encode64(file.read)
 article = Ticket::Article.create(
