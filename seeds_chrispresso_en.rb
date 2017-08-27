@@ -13,11 +13,11 @@ group1 = Group.create_or_update(
   active: true,
 )
 group2 = Group.create_or_update(
-  name: 'Support',
+  name: '2nd Level',
   active: true,
 )
 group3 = Group.create_or_update(
-  name: 'Accounting',
+  name: 'Service Desk',
   active: true,
 )
 org1 = Organization.create_or_update(
@@ -93,6 +93,7 @@ avatar2 = Avatar.add(
 Avatar.set_default('User', agent2.id, avatar2.id)
 agent2.update_attributes(image: avatar2.store_hash)
 
+roles = Role.where(name: ['Agent'])
 agent3 = User.create_or_update(
   login: 'emma@chrispresso.com',
   firstname: 'Emma',

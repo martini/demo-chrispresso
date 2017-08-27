@@ -99,6 +99,7 @@ avatar2 = Avatar.add(
 Avatar.set_default('User', agent2.id, avatar2.id)
 agent2.update_attributes(image: avatar2.store_hash)
 
+roles = Role.where(name: ['Agent'])
 agent3 = User.create_or_update(
   login: 'emma@chrispresso.com',
   firstname: 'Emma',
